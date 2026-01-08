@@ -61,12 +61,12 @@ Other brands that re-use the Gree protocol may also work but are untested.
 
 1. Install **Venus OS Large**
 2. Enable **Node-RED**
-3. Import the provided Node-RED flow
-4. Configure:
-
+3. Install node-red-contrib-gree-hvac
+4. Import the provided Node-RED flow
+5. Configure:
    * Gree AC IP address
-   * Device ID / key (if required)
-5. Access the Node-RED dashboard from the Touch GX
+6. Access the Node-RED dashboard from the Touch GX
+<img width="1080" height="620" alt="Screenshot (31)" src="https://github.com/user-attachments/assets/773db8ae-7613-445e-b203-25dd766a8a10" />
 
 ---
 
@@ -108,15 +108,10 @@ Pull requests, improvements, and testing feedback are welcome.
 
 ---
 
-## License
-
-MIT License
-
----
 
 ## Screenshots
 
-*Add screenshots of the Touch GX interface here*
+<img width="563" height="671" alt="Screenshot (32)" src="https://github.com/user-attachments/assets/9a49934e-c179-459d-89d7-6b16d0b1f7bf" />
 
 ---
 
@@ -124,5 +119,5 @@ MIT License
 
 * Victron Energy – Venus OS & GX platform
 * Node-RED community
-* Gree protocol reverse-engineering contributors
+* inwaar/node-red-contrib-gree-hvac
 
