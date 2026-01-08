@@ -66,7 +66,8 @@ Other brands that re-use the Gree protocol may also work but are untested.
 5. Configure:
    * Gree AC IP address
 6. Access the Node-RED dashboard from the Touch GX
-<img width="1080" height="620" alt="Screenshot (31)" src="https://github.com/user-attachments/assets/773db8ae-7613-445e-b203-25dd766a8a10" />
+<img width="996" height="657" alt="flow" src="https://github.com/user-attachments/assets/568cf380-1870-4aad-9d49-aba5a582ca94" />
+
 
 ---
 
