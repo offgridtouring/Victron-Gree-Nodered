@@ -12,17 +12,7 @@
         "type": "junction",
         "z": "3d65881ca5c4117b",
         "x": 680,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "89d4c247c4a31242",
-        "type": "junction",
-        "z": "3d65881ca5c4117b",
-        "x": 620,
-        "y": 260,
+        "y": 300,
         "wires": [
             []
         ]
@@ -107,15 +97,13 @@
                 "49bbb955bdcca0ea"
             ],
             [
-                "ed7a4d0b.d3c85"
+                "90698868b3b2d328"
             ],
             [
                 "f9f1bcbd34d2e244"
             ],
             [
-                "b0f5ed20.f0dc4",
-                "7099d98bbe9ac63e",
-                "7d1f9fe87aae5ce8"
+                "7099d98bbe9ac63e"
             ],
             [
                 "f04ca313856beb7b"
@@ -142,64 +130,6 @@
         ]
     },
     {
-        "id": "b0f5ed20.f0dc4",
-        "type": "ui_dropdown",
-        "z": "3d65881ca5c4117b",
-        "name": "",
-        "label": "Fan speed",
-        "tooltip": "",
-        "place": "Select option",
-        "group": "5c569ec8.d608f",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Auto",
-                "value": "auto",
-                "type": "str"
-            },
-            {
-                "label": "Low",
-                "value": "low",
-                "type": "str"
-            },
-            {
-                "label": "Medium low",
-                "value": "mediumLow",
-                "type": "str"
-            },
-            {
-                "label": "Medium",
-                "value": "medium",
-                "type": "str"
-            },
-            {
-                "label": "Medium high",
-                "value": "mediumHigh",
-                "type": "str"
-            },
-            {
-                "label": "High",
-                "value": "high",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "fanSpeed",
-        "topicType": "str",
-        "className": "",
-        "x": 550,
-        "y": 500,
-        "wires": [
-            [
-                "62c89d4e.1db264"
-            ]
-        ]
-    },
-    {
         "id": "417b67b1.9d77d8",
         "type": "split",
         "z": "3d65881ca5c4117b",
@@ -215,59 +145,6 @@
         "wires": [
             [
                 "fab8d073.bed76"
-            ]
-        ]
-    },
-    {
-        "id": "ed7a4d0b.d3c85",
-        "type": "ui_dropdown",
-        "z": "3d65881ca5c4117b",
-        "name": "",
-        "label": "Mode",
-        "tooltip": "",
-        "place": "Select option",
-        "group": "5c569ec8.d608f",
-        "order": 3,
-        "width": "0",
-        "height": "0",
-        "passthru": false,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Auto",
-                "value": "auto",
-                "type": "str"
-            },
-            {
-                "label": "Cool",
-                "value": "cool",
-                "type": "str"
-            },
-            {
-                "label": "Dry",
-                "value": "dry",
-                "type": "str"
-            },
-            {
-                "label": "Fan only",
-                "value": "fan_only",
-                "type": "str"
-            },
-            {
-                "label": "Heat",
-                "value": "heat",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "mode",
-        "topicType": "str",
-        "className": "",
-        "x": 530,
-        "y": 340,
-        "wires": [
-            [
-                "62c89d4e.1db264"
             ]
         ]
     },
@@ -352,12 +229,10 @@
         "y": 200,
         "wires": [
             [
-                "6c2175c6bd5809b5",
-                "e7ef2e5a10dd5543"
+                "6c2175c6bd5809b5"
             ],
             [
-                "b7eead166dbe88fe",
-                "e7ef2e5a10dd5543"
+                "b7eead166dbe88fe"
             ]
         ]
     },
@@ -476,7 +351,7 @@
         "include_temp_battery": false,
         "temp_battery_voltage": 3.3,
         "x": 750,
-        "y": 500,
+        "y": 460,
         "wires": [
             [],
             [
@@ -527,7 +402,7 @@
         "repair": false,
         "outputs": 6,
         "x": 890,
-        "y": 500,
+        "y": 460,
         "wires": [
             [
                 "6af6f2a596415bef"
@@ -576,7 +451,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 440,
+        "y": 400,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -610,7 +485,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 460,
+        "y": 420,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -644,7 +519,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 480,
+        "y": 440,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -678,7 +553,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 500,
+        "y": 460,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -712,7 +587,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 520,
+        "y": 480,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -746,7 +621,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 540,
+        "y": 500,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -803,7 +678,7 @@
         "include_temp_battery": false,
         "temp_battery_voltage": 3.3,
         "x": 750,
-        "y": 400,
+        "y": 360,
         "wires": [
             [],
             [
@@ -838,7 +713,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 400,
+        "y": 360,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -872,7 +747,7 @@
         "include_motor_direction": true,
         "position": 0,
         "pvinverter_nrofphases": 1,
-        "switch_1_type": 6,
+        "switch_1_type": "6",
         "switch_1_initial": 0,
         "switch_1_label": "[\"Auto\",\"Cool\",\"Fan\",\"Dry\",\"Heat\"]",
         "switch_1_customname": "Mode",
@@ -892,7 +767,7 @@
         "include_temp_battery": false,
         "temp_battery_voltage": 3.3,
         "x": 730,
-        "y": 340,
+        "y": 300,
         "wires": [
             [],
             [
@@ -938,7 +813,7 @@
         "repair": false,
         "outputs": 5,
         "x": 890,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "27bdaf77fd09a3a6"
@@ -984,7 +859,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 280,
+        "y": 240,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -1018,7 +893,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 300,
+        "y": 260,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -1052,7 +927,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 320,
+        "y": 280,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -1086,7 +961,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -1120,7 +995,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 360,
+        "y": 320,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -1174,7 +1049,7 @@
         "include_temp_battery": false,
         "temp_battery_voltage": 3.3,
         "x": 730,
-        "y": 600,
+        "y": 560,
         "wires": [
             [],
             [
@@ -1205,7 +1080,7 @@
         "repair": false,
         "outputs": 2,
         "x": 890,
-        "y": 600,
+        "y": 560,
         "wires": [
             [
                 "7a3c114821bb4444"
@@ -1242,7 +1117,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 580,
+        "y": 540,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -1276,7 +1151,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 600,
+        "y": 560,
         "wires": [
             [
                 "62c89d4e.1db264"
@@ -1316,7 +1191,7 @@
         "finalize": "",
         "libs": [],
         "x": 560,
-        "y": 400,
+        "y": 360,
         "wires": [
             []
         ]
@@ -1334,7 +1209,7 @@
         "finalize": "",
         "libs": [],
         "x": 560,
-        "y": 600,
+        "y": 560,
         "wires": [
             [
                 "c2972c324970197f"
@@ -1366,7 +1241,7 @@
         "type": "function",
         "z": "3d65881ca5c4117b",
         "name": "Fan Feedback",
-        "func": "// Get the dimming value from the incoming message or memory\nlet currentLevel = (msg.payload.path === '/SwitchableOutput/output_1/Dimming') \n    ? msg.payload.value \n    : flow.get('fanDimming') || 0;\n\n// Save to memory\nflow.set('fanDimming', currentLevel);\n\n// ONLY send the dimming path. \n// Do NOT include /Settings/Labels here, as it causes the type error.\nmsg.payload = {\n    \"/SwitchableOutput/output_1/Dimming\": Number(currentLevel)\n};\n\nreturn msg;",
+        "func": "// 1. Create a map of text labels to their numeric values\nconst fanMap = {\n    \"auto\": 0,\n    \"low\": 1,\n    \"mediumLow\": 2,\n    \"medium\": 3,\n    \"mediumHigh\": 4,\n    \"high\": 5\n};\n\n// 2. Get the incoming string (check if it's in msg.payload or msg.payload.value)\nlet inputString = typeof msg.payload === 'object' ? msg.payload.value : msg.payload;\n\n// 3. Look up the number. If the string isn't found, default to 0 (auto)\nlet speedIndex = fanMap[inputString];\n\nif (speedIndex !== undefined) {\n    // 4. Output the exact object format the Victron node requires\n    msg.payload = {\n        \"/SwitchableOutput/output_1/Dimming\": speedIndex\n    };\n    return msg;\n}\n\n// If the message wasn't one of our fan strings, do nothing\nreturn null;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1377,118 +1252,29 @@
         "y": 460,
         "wires": [
             [
-                "f3a91923024865ca",
-                "7d1f9fe87aae5ce8"
+                "f3a91923024865ca"
             ]
         ]
     },
     {
-        "id": "7d1f9fe87aae5ce8",
-        "type": "debug",
+        "id": "90698868b3b2d328",
+        "type": "function",
         "z": "3d65881ca5c4117b",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 540,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "3470dc4946fab76e",
-        "type": "victron-output-custom",
-        "z": "3d65881ca5c4117b",
-        "service": "com.victronenergy.switch/105",
-        "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-        "serviceObj": {
-            "service": "com.victronenergy.switch/105",
-            "name": "Sleep (105)"
-        },
-        "pathObj": {
-            "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-            "name": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-            "type": "number",
-            "value": 1
-        },
-        "name": "Sleep",
-        "onlyChanges": false,
-        "rateLimit": 0,
-        "x": 1330,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "e7ef2e5a10dd5543",
-        "type": "victron-output-custom",
-        "z": "3d65881ca5c4117b",
-        "service": "com.victronenergy.switch/104",
-        "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-        "serviceObj": {
-            "service": "com.victronenergy.switch/104",
-            "name": "Mode (104)"
-        },
-        "pathObj": {
-            "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-            "name": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-            "type": "number",
-            "value": 1
-        },
-        "name": "Mode",
-        "onlyChanges": false,
-        "rateLimit": 0,
-        "x": 1330,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "ddc9ca5aed975e17",
-        "type": "victron-output-custom",
-        "z": "3d65881ca5c4117b",
-        "service": "com.victronenergy.switch/102",
-        "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-        "serviceObj": {
-            "service": "com.victronenergy.switch/102",
-            "name": "Fan Speed (102)"
-        },
-        "pathObj": {
-            "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-            "name": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-            "type": "number",
-            "value": 1
-        },
-        "name": "Fan Speed",
-        "onlyChanges": false,
-        "rateLimit": 0,
-        "x": 1350,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "5ab7378802c41c22",
-        "type": "victron-output-custom",
-        "z": "3d65881ca5c4117b",
-        "service": "com.victronenergy.switch/103",
-        "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-        "serviceObj": {
-            "service": "com.victronenergy.switch/103",
-            "name": "Temperature (103)"
-        },
-        "pathObj": {
-            "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-            "name": "/SwitchableOutput/output_1/Settings/ShowUIControl",
-            "type": "number",
-            "value": 1
-        },
-        "name": "Temperature",
-        "onlyChanges": false,
-        "rateLimit": 0,
-        "x": 1350,
-        "y": 160,
-        "wires": []
+        "name": "Mode Feedback",
+        "func": "// 1. Create a map of text labels to their numeric values\nconst modeMap = {\n    \"auto\": 0,\n    \"cool\": 1,\n    \"fan_only\": 2,\n    \"dry\": 3,\n    \"heat\": 4,\n};\n\n// 2. Get the incoming string (check if it's in msg.payload or msg.payload.value)\nlet inputString = typeof msg.payload === 'object' ? msg.payload.value : msg.payload;\n\n// 3. Look up the number. If the string isn't found, default to 0 (auto)\nlet speedIndex = modeMap[inputString];\n\nif (speedIndex !== undefined) {\n    // 4. Output the exact object format the Victron node requires\n    msg.payload = {\n        \"/SwitchableOutput/output_1/Dimming\": speedIndex\n    };\n    return msg;\n}\n\n// If the message wasn't one of our mode strings, do nothing\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 300,
+        "wires": [
+            [
+                "0c455fde3ff7a1ec"
+            ]
+        ]
     },
     {
         "id": "1dc3e70668c2967a",
@@ -1497,30 +1283,11 @@
         "host": "192.168.1.236"
     },
     {
-        "id": "5c569ec8.d608f",
-        "type": "ui_group",
-        "name": "AC",
-        "tab": "168c092a.469d97",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "168c092a.469d97",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "a0bf46ac60fbe9a6",
+        "id": "2f4dd4c0b29c8def",
         "type": "global-config",
         "env": [],
         "modules": {
             "node-red-contrib-gree-hvac": "0.3.0",
-            "node-red-dashboard": "3.6.6",
             "@victronenergy/node-red-contrib-victron": "1.6.55"
         }
     }
