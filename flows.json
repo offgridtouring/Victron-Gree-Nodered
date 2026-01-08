@@ -1,0 +1,1527 @@
+[
+    {
+        "id": "3d65881ca5c4117b",
+        "type": "tab",
+        "label": "Gree Aircon",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fdf74f2e850940f6",
+        "type": "junction",
+        "z": "3d65881ca5c4117b",
+        "x": 680,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89d4c247c4a31242",
+        "type": "junction",
+        "z": "3d65881ca5c4117b",
+        "x": 620,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff9fe48d.da79d8",
+        "type": "debug",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "3cfb9d5c.2adfc2",
+        "type": "gree-hvac",
+        "z": "3d65881ca5c4117b",
+        "name": "AC",
+        "device": "1dc3e70668c2967a",
+        "interval": "1",
+        "x": 350,
+        "y": 600,
+        "wires": [
+            [
+                "ff9fe48d.da79d8"
+            ],
+            [
+                "417b67b1.9d77d8",
+                "ff9fe48d.da79d8"
+            ]
+        ]
+    },
+    {
+        "id": "fab8d073.bed76",
+        "type": "switch",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "power",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "mode",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "temperature",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fanSpeed",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "sleep",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 350,
+        "y": 420,
+        "wires": [
+            [
+                "49bbb955bdcca0ea"
+            ],
+            [
+                "ed7a4d0b.d3c85"
+            ],
+            [
+                "f9f1bcbd34d2e244"
+            ],
+            [
+                "b0f5ed20.f0dc4",
+                "7099d98bbe9ac63e",
+                "7d1f9fe87aae5ce8"
+            ],
+            [
+                "f04ca313856beb7b"
+            ]
+        ]
+    },
+    {
+        "id": "62c89d4e.1db264",
+        "type": "rbe",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 1090,
+        "y": 720,
+        "wires": [
+            [
+                "3cfb9d5c.2adfc2",
+                "ff9fe48d.da79d8"
+            ]
+        ]
+    },
+    {
+        "id": "b0f5ed20.f0dc4",
+        "type": "ui_dropdown",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "label": "Fan speed",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "5c569ec8.d608f",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Auto",
+                "value": "auto",
+                "type": "str"
+            },
+            {
+                "label": "Low",
+                "value": "low",
+                "type": "str"
+            },
+            {
+                "label": "Medium low",
+                "value": "mediumLow",
+                "type": "str"
+            },
+            {
+                "label": "Medium",
+                "value": "medium",
+                "type": "str"
+            },
+            {
+                "label": "Medium high",
+                "value": "mediumHigh",
+                "type": "str"
+            },
+            {
+                "label": "High",
+                "value": "high",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "fanSpeed",
+        "topicType": "str",
+        "className": "",
+        "x": 550,
+        "y": 500,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "417b67b1.9d77d8",
+        "type": "split",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "topic",
+        "x": 350,
+        "y": 520,
+        "wires": [
+            [
+                "fab8d073.bed76"
+            ]
+        ]
+    },
+    {
+        "id": "ed7a4d0b.d3c85",
+        "type": "ui_dropdown",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "label": "Mode",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "5c569ec8.d608f",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Auto",
+                "value": "auto",
+                "type": "str"
+            },
+            {
+                "label": "Cool",
+                "value": "cool",
+                "type": "str"
+            },
+            {
+                "label": "Dry",
+                "value": "dry",
+                "type": "str"
+            },
+            {
+                "label": "Fan only",
+                "value": "fan_only",
+                "type": "str"
+            },
+            {
+                "label": "Heat",
+                "value": "heat",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "mode",
+        "topicType": "str",
+        "className": "",
+        "x": 530,
+        "y": 340,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "ec81e7bbdb8228bb",
+        "type": "victron-virtual",
+        "z": "3d65881ca5c4117b",
+        "name": "Power",
+        "outputs": 2,
+        "device": "switch",
+        "default_values": false,
+        "acload_nrofphases": 1,
+        "enable_s2support": false,
+        "battery_capacity": 25,
+        "include_battery_temperature": false,
+        "battery_voltage_preset": "24",
+        "battery_voltage_custom": 24,
+        "generator_type": "ac",
+        "generator_nrofphases": 1,
+        "include_engine_hours": false,
+        "include_starter_voltage": false,
+        "include_history_energy": false,
+        "grid_nrofphases": 1,
+        "include_motor_temp": false,
+        "include_controller_temp": false,
+        "include_coolant_temp": false,
+        "include_motor_rpm": true,
+        "include_motor_direction": true,
+        "position": 0,
+        "pvinverter_nrofphases": 1,
+        "switch_1_type": "1",
+        "switch_1_initial": 0,
+        "switch_1_label": "",
+        "switch_1_customname": "Power",
+        "switch_1_group": "Aircon",
+        "switch_1_include_measurement": false,
+        "switch_1_rgb_color_wheel": false,
+        "switch_1_cct_wheel": false,
+        "switch_1_rgb_white_dimmer": false,
+        "fluid_type": 0,
+        "include_tank_battery": false,
+        "include_tank_temperature": false,
+        "tank_battery_voltage": 3.3,
+        "tank_capacity": 0.2,
+        "temperature_type": 2,
+        "include_humidity": false,
+        "include_pressure": false,
+        "include_temp_battery": false,
+        "temp_battery_voltage": 3.3,
+        "x": 730,
+        "y": 200,
+        "wires": [
+            [],
+            [
+                "ac62acce3cf4dcc9"
+            ]
+        ]
+    },
+    {
+        "id": "ac62acce3cf4dcc9",
+        "type": "switch",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 200,
+        "wires": [
+            [
+                "6c2175c6bd5809b5",
+                "e7ef2e5a10dd5543"
+            ],
+            [
+                "b7eead166dbe88fe",
+                "e7ef2e5a10dd5543"
+            ]
+        ]
+    },
+    {
+        "id": "6c2175c6bd5809b5",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "power",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 160,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "b7eead166dbe88fe",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "power",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 200,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "f3a91923024865ca",
+        "type": "victron-virtual",
+        "z": "3d65881ca5c4117b",
+        "name": "Fan Speed",
+        "outputs": 2,
+        "device": "switch",
+        "default_values": false,
+        "acload_nrofphases": 1,
+        "enable_s2support": false,
+        "battery_capacity": 25,
+        "include_battery_temperature": false,
+        "battery_voltage_preset": "24",
+        "battery_voltage_custom": 24,
+        "generator_type": "ac",
+        "generator_nrofphases": 1,
+        "include_engine_hours": false,
+        "include_starter_voltage": false,
+        "include_history_energy": false,
+        "grid_nrofphases": 1,
+        "include_motor_temp": false,
+        "include_controller_temp": false,
+        "include_coolant_temp": false,
+        "include_motor_rpm": true,
+        "include_motor_direction": true,
+        "position": 0,
+        "pvinverter_nrofphases": 1,
+        "switch_1_type": "6",
+        "switch_1_initial": 0,
+        "switch_1_label": "[\"Auto\",\"1\",\"2\",\"3\",\"4\",\"5\"]",
+        "switch_1_customname": "Fan Speed",
+        "switch_1_group": "Aircon",
+        "switch_1_include_measurement": false,
+        "switch_1_rgb_color_wheel": false,
+        "switch_1_cct_wheel": false,
+        "switch_1_rgb_white_dimmer": false,
+        "fluid_type": 0,
+        "include_tank_battery": false,
+        "include_tank_temperature": false,
+        "tank_battery_voltage": 3.3,
+        "tank_capacity": 0.2,
+        "temperature_type": 2,
+        "include_humidity": false,
+        "include_pressure": false,
+        "include_temp_battery": false,
+        "temp_battery_voltage": 3.3,
+        "x": 750,
+        "y": 500,
+        "wires": [
+            [],
+            [
+                "b09635c10caac8a6"
+            ]
+        ]
+    },
+    {
+        "id": "b09635c10caac8a6",
+        "type": "switch",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "Auto",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 890,
+        "y": 500,
+        "wires": [
+            [
+                "6af6f2a596415bef"
+            ],
+            [
+                "8055e3cd84b60fec"
+            ],
+            [
+                "9486bf92ae92e5e9"
+            ],
+            [
+                "0e72da5b19124c8e"
+            ],
+            [
+                "203936abad3ead9b"
+            ],
+            [
+                "f66a7c7797b12583"
+            ]
+        ]
+    },
+    {
+        "id": "6af6f2a596415bef",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "auto",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fanSpeed",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 440,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "8055e3cd84b60fec",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "low",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fanSpeed",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 460,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "9486bf92ae92e5e9",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "mediumLow",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fanSpeed",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 480,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "0e72da5b19124c8e",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "medium",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fanSpeed",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 500,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "203936abad3ead9b",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "mediumHigh",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fanSpeed",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 520,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "f66a7c7797b12583",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "high",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fanSpeed",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 540,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "d36dde50a5e0092c",
+        "type": "victron-virtual",
+        "z": "3d65881ca5c4117b",
+        "name": "Temperature",
+        "outputs": 2,
+        "device": "switch",
+        "default_values": false,
+        "acload_nrofphases": 1,
+        "enable_s2support": false,
+        "battery_capacity": 25,
+        "include_battery_temperature": false,
+        "battery_voltage_preset": "24",
+        "battery_voltage_custom": 24,
+        "generator_type": "ac",
+        "generator_nrofphases": 1,
+        "include_engine_hours": false,
+        "include_starter_voltage": false,
+        "include_history_energy": false,
+        "grid_nrofphases": 1,
+        "include_motor_temp": false,
+        "include_controller_temp": false,
+        "include_coolant_temp": false,
+        "include_motor_rpm": true,
+        "include_motor_direction": true,
+        "position": 0,
+        "pvinverter_nrofphases": 1,
+        "switch_1_type": "3",
+        "switch_1_min": "16",
+        "switch_1_max": "30",
+        "switch_1_initial": 0,
+        "switch_1_label": "",
+        "switch_1_step": 1,
+        "switch_1_customname": "Temperature",
+        "switch_1_group": "Aircon",
+        "switch_1_include_measurement": true,
+        "switch_1_rgb_color_wheel": false,
+        "switch_1_cct_wheel": false,
+        "switch_1_rgb_white_dimmer": false,
+        "fluid_type": 0,
+        "include_tank_battery": false,
+        "include_tank_temperature": false,
+        "tank_battery_voltage": 3.3,
+        "tank_capacity": 0.2,
+        "temperature_type": 2,
+        "include_humidity": false,
+        "include_pressure": false,
+        "include_temp_battery": false,
+        "temp_battery_voltage": 3.3,
+        "x": 750,
+        "y": 400,
+        "wires": [
+            [],
+            [
+                "a6dcf6d5e98d21d9"
+            ]
+        ]
+    },
+    {
+        "id": "a6dcf6d5e98d21d9",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "temperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 400,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "0c455fde3ff7a1ec",
+        "type": "victron-virtual",
+        "z": "3d65881ca5c4117b",
+        "name": "Mode",
+        "outputs": 2,
+        "device": "switch",
+        "default_values": false,
+        "acload_nrofphases": 1,
+        "enable_s2support": false,
+        "battery_capacity": 25,
+        "include_battery_temperature": false,
+        "battery_voltage_preset": "24",
+        "battery_voltage_custom": 24,
+        "generator_type": "ac",
+        "generator_nrofphases": 1,
+        "include_engine_hours": false,
+        "include_starter_voltage": false,
+        "include_history_energy": false,
+        "grid_nrofphases": 1,
+        "include_motor_temp": false,
+        "include_controller_temp": false,
+        "include_coolant_temp": false,
+        "include_motor_rpm": true,
+        "include_motor_direction": true,
+        "position": 0,
+        "pvinverter_nrofphases": 1,
+        "switch_1_type": 6,
+        "switch_1_initial": 0,
+        "switch_1_label": "[\"Auto\",\"Cool\",\"Fan\",\"Dry\",\"Heat\"]",
+        "switch_1_customname": "Mode",
+        "switch_1_group": "Aircon",
+        "switch_1_include_measurement": false,
+        "switch_1_rgb_color_wheel": false,
+        "switch_1_cct_wheel": false,
+        "switch_1_rgb_white_dimmer": false,
+        "fluid_type": 0,
+        "include_tank_battery": false,
+        "include_tank_temperature": false,
+        "tank_battery_voltage": 3.3,
+        "tank_capacity": 0.2,
+        "temperature_type": 2,
+        "include_humidity": false,
+        "include_pressure": false,
+        "include_temp_battery": false,
+        "temp_battery_voltage": 3.3,
+        "x": 730,
+        "y": 340,
+        "wires": [
+            [],
+            [
+                "54fb6c3b54923d4a"
+            ]
+        ]
+    },
+    {
+        "id": "54fb6c3b54923d4a",
+        "type": "switch",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Auto",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 890,
+        "y": 340,
+        "wires": [
+            [
+                "27bdaf77fd09a3a6"
+            ],
+            [
+                "71361671b93c4005"
+            ],
+            [
+                "b5a10c872fccc458"
+            ],
+            [
+                "71dfbed235ff0626"
+            ],
+            [
+                "d73ed577665a2ea0"
+            ]
+        ]
+    },
+    {
+        "id": "27bdaf77fd09a3a6",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "auto",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "mode",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 280,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "71361671b93c4005",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "cool",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "mode",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 300,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "b5a10c872fccc458",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "fan_only",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "mode",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 320,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "71dfbed235ff0626",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "dry",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "mode",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 340,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "d73ed577665a2ea0",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "heat",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "mode",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 360,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "c2972c324970197f",
+        "type": "victron-virtual",
+        "z": "3d65881ca5c4117b",
+        "name": "Sleep",
+        "outputs": 2,
+        "device": "switch",
+        "default_values": false,
+        "acload_nrofphases": 1,
+        "enable_s2support": false,
+        "battery_capacity": 25,
+        "include_battery_temperature": false,
+        "battery_voltage_preset": "24",
+        "battery_voltage_custom": 24,
+        "generator_type": "ac",
+        "generator_nrofphases": 1,
+        "include_engine_hours": false,
+        "include_starter_voltage": false,
+        "include_history_energy": false,
+        "grid_nrofphases": 1,
+        "include_motor_temp": false,
+        "include_controller_temp": false,
+        "include_coolant_temp": false,
+        "include_motor_rpm": true,
+        "include_motor_direction": true,
+        "position": 0,
+        "pvinverter_nrofphases": 1,
+        "switch_1_type": "1",
+        "switch_1_initial": 0,
+        "switch_1_label": "",
+        "switch_1_customname": "Sleep",
+        "switch_1_group": "Aircon",
+        "switch_1_include_measurement": false,
+        "switch_1_rgb_color_wheel": false,
+        "switch_1_cct_wheel": false,
+        "switch_1_rgb_white_dimmer": false,
+        "fluid_type": 0,
+        "include_tank_battery": false,
+        "include_tank_temperature": false,
+        "tank_battery_voltage": 3.3,
+        "tank_capacity": 0.2,
+        "temperature_type": 2,
+        "include_humidity": false,
+        "include_pressure": false,
+        "include_temp_battery": false,
+        "temp_battery_voltage": 3.3,
+        "x": 730,
+        "y": 600,
+        "wires": [
+            [],
+            [
+                "14068457595c5097"
+            ]
+        ]
+    },
+    {
+        "id": "14068457595c5097",
+        "type": "switch",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 600,
+        "wires": [
+            [
+                "7a3c114821bb4444"
+            ],
+            [
+                "97aa91770ca73d8f"
+            ]
+        ]
+    },
+    {
+        "id": "7a3c114821bb4444",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "sleep",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 580,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "97aa91770ca73d8f",
+        "type": "change",
+        "z": "3d65881ca5c4117b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "sleep",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 600,
+        "wires": [
+            [
+                "62c89d4e.1db264"
+            ]
+        ]
+    },
+    {
+        "id": "f9f1bcbd34d2e244",
+        "type": "function",
+        "z": "3d65881ca5c4117b",
+        "name": "Temp Feedback",
+        "func": "// Check if payload is an object with a value, or just a raw number\nlet temp = (typeof msg.payload === 'object') ? msg.payload.value : msg.payload;\n\n// Check if temp is valid, otherwise stop here\nif (temp === undefined || temp === null) {\n    node.warn(\"Temperature is undefined!\");\n    return null; \n}\n\n// Format for the Victron Output Node\nmsg.payload = {\n    \"/SwitchableOutput/output_1/Dimming\": Number(temp)\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 400,
+        "wires": [
+            [
+                "d36dde50a5e0092c"
+            ]
+        ]
+    },
+    {
+        "id": "01862a4510d92383",
+        "type": "function",
+        "z": "3d65881ca5c4117b",
+        "name": "Temp Feedback",
+        "func": "// Check if payload is an object with a value, or just a raw number\nlet temp = (typeof msg.payload === 'object') ? msg.payload.value : msg.payload;\n\n// Check if temp is valid, otherwise stop here\nif (temp === undefined || temp === null) {\n    node.warn(\"Temperature is undefined!\");\n    return null; \n}\n\n// Format for the Victron Output Node\nmsg.payload = {\n    \"/SwitchableOutput/output_1/Dimming\": Number(temp)\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f04ca313856beb7b",
+        "type": "function",
+        "z": "3d65881ca5c4117b",
+        "name": "Sleep Feedback",
+        "func": "let input = msg.payload;\nlet state;\n\n// Convert incoming string or boolean to Victron 0/1\nif (input === \"on\" || input === true || input === 1) {\n    state = 1;\n} else {\n    state = 0;\n}\n\nmsg.payload = {\n    \"/SwitchableOutput/output_1/State\": state\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 600,
+        "wires": [
+            [
+                "c2972c324970197f"
+            ]
+        ]
+    },
+    {
+        "id": "49bbb955bdcca0ea",
+        "type": "function",
+        "z": "3d65881ca5c4117b",
+        "name": "Power Feedback",
+        "func": "let input = msg.payload;\nlet state;\n\n// Convert incoming string or boolean to Victron 0/1\nif (input === \"on\" || input === true || input === 1) {\n    state = 1;\n} else {\n    state = 0;\n}\n\nmsg.payload = {\n    \"/SwitchableOutput/output_1/State\": state\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 200,
+        "wires": [
+            [
+                "ec81e7bbdb8228bb"
+            ]
+        ]
+    },
+    {
+        "id": "7099d98bbe9ac63e",
+        "type": "function",
+        "z": "3d65881ca5c4117b",
+        "name": "Fan Feedback",
+        "func": "// Get the dimming value from the incoming message or memory\nlet currentLevel = (msg.payload.path === '/SwitchableOutput/output_1/Dimming') \n    ? msg.payload.value \n    : flow.get('fanDimming') || 0;\n\n// Save to memory\nflow.set('fanDimming', currentLevel);\n\n// ONLY send the dimming path. \n// Do NOT include /Settings/Labels here, as it causes the type error.\nmsg.payload = {\n    \"/SwitchableOutput/output_1/Dimming\": Number(currentLevel)\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 460,
+        "wires": [
+            [
+                "f3a91923024865ca",
+                "7d1f9fe87aae5ce8"
+            ]
+        ]
+    },
+    {
+        "id": "7d1f9fe87aae5ce8",
+        "type": "debug",
+        "z": "3d65881ca5c4117b",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3470dc4946fab76e",
+        "type": "victron-output-custom",
+        "z": "3d65881ca5c4117b",
+        "service": "com.victronenergy.switch/105",
+        "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+        "serviceObj": {
+            "service": "com.victronenergy.switch/105",
+            "name": "Sleep (105)"
+        },
+        "pathObj": {
+            "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+            "name": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+            "type": "number",
+            "value": 1
+        },
+        "name": "Sleep",
+        "onlyChanges": false,
+        "rateLimit": 0,
+        "x": 1330,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e7ef2e5a10dd5543",
+        "type": "victron-output-custom",
+        "z": "3d65881ca5c4117b",
+        "service": "com.victronenergy.switch/104",
+        "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+        "serviceObj": {
+            "service": "com.victronenergy.switch/104",
+            "name": "Mode (104)"
+        },
+        "pathObj": {
+            "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+            "name": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+            "type": "number",
+            "value": 1
+        },
+        "name": "Mode",
+        "onlyChanges": false,
+        "rateLimit": 0,
+        "x": 1330,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ddc9ca5aed975e17",
+        "type": "victron-output-custom",
+        "z": "3d65881ca5c4117b",
+        "service": "com.victronenergy.switch/102",
+        "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+        "serviceObj": {
+            "service": "com.victronenergy.switch/102",
+            "name": "Fan Speed (102)"
+        },
+        "pathObj": {
+            "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+            "name": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+            "type": "number",
+            "value": 1
+        },
+        "name": "Fan Speed",
+        "onlyChanges": false,
+        "rateLimit": 0,
+        "x": 1350,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5ab7378802c41c22",
+        "type": "victron-output-custom",
+        "z": "3d65881ca5c4117b",
+        "service": "com.victronenergy.switch/103",
+        "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+        "serviceObj": {
+            "service": "com.victronenergy.switch/103",
+            "name": "Temperature (103)"
+        },
+        "pathObj": {
+            "path": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+            "name": "/SwitchableOutput/output_1/Settings/ShowUIControl",
+            "type": "number",
+            "value": 1
+        },
+        "name": "Temperature",
+        "onlyChanges": false,
+        "rateLimit": 0,
+        "x": 1350,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1dc3e70668c2967a",
+        "type": "gree-hvac-config",
+        "name": "Caravan Aircon",
+        "host": "192.168.1.236"
+    },
+    {
+        "id": "5c569ec8.d608f",
+        "type": "ui_group",
+        "name": "AC",
+        "tab": "168c092a.469d97",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "168c092a.469d97",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a0bf46ac60fbe9a6",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-gree-hvac": "0.3.0",
+            "node-red-dashboard": "3.6.6",
+            "@victronenergy/node-red-contrib-victron": "1.6.55"
+        }
+    }
+]
